@@ -1,0 +1,111 @@
+<div class="relative flex flex-col items-center justify-center h-screen overflow-hidden">
+    <div class="w-full p-6 bg-base border-t-4 border-gray-600 rounded-md shadow-md border-top lg:max-w-lg">
+        <h1 class="text-3xl font-semibold text-center text-base-700">Login</h1>
+        <div class="m-5">
+            <button id="gmail" class="btn btn-ghost m-2 p-2"> use Gmail?</button>
+            <button id="outlook" class="btn btn-ghost m-2 p-2"> use outlook?</button>
+            <button id="yahoo" class="btn btn-ghost m-2 p-2"> use yahoo?</button>
+            <input type="file" id="fileInput" accept=".json"/>
+            <button id="saveConfig"> Save Config </button>
+        </div>
+        <form class="space-y-4" id="form" action="/login" method="post">
+            <div  id="error" class="m-2 space-y-2 bg-base-300 p-4 border hidden">
+                <p class="text-error font-bold text-center text-lg"> Invalid Password </p>
+            </div> 
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">Email</span>
+                </label>
+                <input type="email" name="email" required placeholder="...@....com"
+                    class="w-full input input-bordered" />
+            </div>
+         <div class="bg-base w-full absolute right-10 top-10 border-t-4 border-gray-600 rounded-md shadow-md border-top lg:max-w-md">
+            <h2 class="text-2xl font-semibold text-center text-base-700">Imap Config</h2>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">IMAP User</span>
+                </label>
+                <input type="text" name="imapUser" required placeholder="...@....com"
+                    class="w-full input input-bordered" />
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">IMAP Password</span>
+                </label>
+                <input type="password" name="imapPassword"  required placeholder="123456"
+                    class="w-full input input-bordered"  required/>
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">IMAP Secure</span>
+                </label>
+               <select name="imapSecure" id="">
+                     <option value="true">true</option>
+                     <option value="false">false</option>
+               </select>
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">IMAP host</span>
+                </label>
+                <input type="text" name="imapHost" required placeholder="imap.example.com"
+                    class="w-full input input-bordered" />
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">IMAP Port</span>
+                </label>
+                <input type="number" value="995" name="imapPort" required placeholder="195"
+                    class="w-full input input-bordered" />
+            </div>
+         </div>
+
+
+         <div class="bg-base w-full absolute left-10 top-10 border-t-4 border-gray-600 rounded-md shadow-md border-top lg:max-w-md">
+            <h2 class="text-2xl font-semibold text-center text-base-700">SMTP Config</h2>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">SMTP User</span>
+                </label>
+                <input type="text" name="smtpUser" required placeholder="...@....com"
+                    class="w-full input input-bordered" />
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">smtp Password</span>
+                </label>
+                <input type="password" name="smtpPassword"  required placeholder="123456"
+                    class="w-full input input-bordered"  required/>
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">smtp Secure</span>
+                </label>
+               <select name="smtpSecure" id="">
+                     <option value="true">true</option>
+                     <option value="false">false</option>
+               </select>
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">smtp host</span>
+                </label>
+                <input type="text" name="smtpHost" required placeholder="smtp.example.com"
+                    class="w-full input input-bordered" />
+            </div>
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">smtp Port</span>
+                </label>
+                <input type="number" value="25" name="smtpPort" required placeholder="195"
+                    class="w-full input input-bordered" />
+            </div>
+         </div>
+            <div>
+                <button class="btn btn-block" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="javascript/login.js"></script>
