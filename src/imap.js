@@ -66,7 +66,7 @@ try {
         // debug(parsed.to.value[0].address, email)
         if(email && parsed.from.value[0].address === email) {
           emails.push(parsed)
-        } else if(!email && baseConfig.emails.some(e => parsed.to.value[0].address.includes(e.domain.replace("%s", "")))) {
+        } else if(!email && baseConfig.emails.some(e => parsed.to && parsed.to.value[0].address.includes(e.domain.replace("%s", "")))) {
           emails.push(parsed)
         }
         }
